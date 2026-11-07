@@ -1,0 +1,336 @@
+/* ============================================================
+   个人主页 · 素净水墨 / 中式极简
+   宣纸浅底 · 墨色字 · 细线分割 · 大量留白
+   ============================================================ */
+
+/* ---------- 设计变量 ---------- */
+:root {
+  --font-sans: 'LXGW WenKai', "Kaiti SC", "STKaiti", "KaiTi", "BiauKai", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --maxw: 880px;          /* 窄版心，留白更多 */
+  --gap: clamp(3.5rem, 8vw, 6rem);
+
+  /* 宣纸 · 墨 */
+  --bg: #f5f1e8;
+  --bg-soft: #efeadd;
+  --bg-card: #f8f5ee;
+  --text: #2b2a26;
+  --text-dim: #8b8574;
+  --line: rgba(43, 42, 38, 0.16);
+  --accent: #9a3530;      /* 一点朱砂，全局唯一的亮色 */
+  --accent-2: #4a615e;
+
+  --thumb-1: #f2eee3;
+  --thumb-2: #f2eee3;
+  --thumb-3: #f2eee3;
+  color-scheme: light;
+}
+
+/* 夜墨（暂不从界面切换，保留变量备着） */
+[data-theme="dark"] {
+  --bg: #15171a;
+  --bg-soft: #1b1e22;
+  --bg-card: #191c20;
+  --text: #e6e2d8;
+  --text-dim: #8d93a0;
+  --line: rgba(230, 226, 216, 0.14);
+  --accent: #c46a5f;
+  --thumb-1: #1c1f24;
+  --thumb-2: #1c1f24;
+  --thumb-3: #1c1f24;
+  color-scheme: dark;
+}
+
+/* ---------- 基础 ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.container {
+  width: min(var(--maxw), 100% - 3rem * 2);
+  margin-inline: auto;
+}
+
+.accent { color: var(--accent); }
+
+/* ---------- 顶栏：细线一条，无毛玻璃 ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.nav__logo {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+}
+.nav__logo-dot { color: var(--accent); }
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  transition: color 0.2s;
+}
+.nav__link:hover { color: var(--accent); }
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.nav__bar {
+  width: 20px;
+  height: 1px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---------- 英雄区：大字报式留白 ---------- */
+.hero {
+  padding: clamp(3.5rem, 9vw, 6rem) 0 var(--gap);
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  margin: 0 0 1.4rem;
+  letter-spacing: 0.4em;
+  font-size: 0.8rem;
+}
+
+.hero__name {
+  font-size: clamp(3rem, 10vw, 5.2rem);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.4rem;
+}
+
+.hero__role {
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  margin: 0 0 1.6rem;
+}
+
+.hero__tagline {
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  max-width: 30rem;
+  margin: 0 0 2.6rem;
+}
+
+.hero__cta { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 2.4rem; }
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.6rem;
+  border: 1px solid var(--text);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.22em;
+  transition: color 0.25s, border-color 0.25s;
+}
+.btn--primary { border-color: var(--accent); color: var(--accent); }
+.btn--primary:hover { background: var(--accent); color: var(--bg); }
+.btn--ghost { color: var(--text-dim); border-color: var(--line); }
+.btn--ghost:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- 通用 section ---------- */
+.section { padding: calc(var(--gap) * 0.8) 0; }
+
+.section__title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  color: var(--text-dim);
+  margin: 0 0 2.2rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* 诗题目录：小一号的素链接行 */
+.poems__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 2.6rem;
+}
+.poems__index a {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.poems__index a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- 日常诗集：全页重心 ---------- */
+.poems__list {
+  display: grid;
+  gap: 3.4rem;
+  max-width: 40rem;
+  padding-top: 0.4rem;
+}
+.poem-entry {
+  border-left: 1px solid var(--line);
+  padding: 0.2rem 0 0.2rem 1.8rem;
+  scroll-margin-top: 72px;   /* 点标题跳转时不被吸顶导航挡住 */
+}
+.poem-entry__title {
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  margin: 0 0 1.1rem;
+}
+.poem-entry__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.poem-entry__title a:hover { color: var(--accent); }
+.poem-entry__title::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  margin-right: 0.9rem;   /* 一枚朱砂小点，代替序号 */
+}
+.poem-entry__body {
+  font-family: 'LXGW WenKai', "Kaiti SC", "STKaiti", "KaiTi", "Noto Serif SC", "Source Han Serif SC", serif;
+  font-size: clamp(1.25rem, 3.2vw, 1.5rem);
+  line-height: 2.5;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+.poem-entry__meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  margin: 1.2rem 0 0;
+}
+
+/* ---------- 关于 ---------- */
+.about p { color: var(--text-dim); max-width: 38rem; margin: 0 0 2rem; }
+
+/* ---------- 联系 ---------- */
+.contact p { color: var(--text-dim); margin: 0 0 1.2rem; }
+.contact__email {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+.contact__email:hover { border-color: var(--accent); }
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0;
+  margin-top: var(--gap);
+}
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-footer p { margin: 0; color: var(--text-dim); font-size: 0.82rem; letter-spacing: 0.08em; }
+.site-footer__top {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+.site-footer__top:hover { color: var(--accent); }
+
+/* ---------- 入场动效：只淡入，不位移（水墨不跳） ---------- */
+.reveal {
+  opacity: 0;
+  transition: opacity 1.1s ease;
+}
+.reveal.in { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transition: none; }
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 720px) {
+  .nav__toggle { display: flex; }
+
+  .nav__menu {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 0.4rem 3rem 1.4rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.28s ease;
+  }
+  .nav__menu.open { transform: scaleY(1); }
+  .nav__menu li { padding: 0.8rem 0; border-top: 1px solid var(--line); }
+  .nav__menu li:first-child { border-top: 0; }
+}
