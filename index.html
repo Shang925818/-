@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="日常诗集。" />
+  <title>十页 · 日常诗集</title>
+  <!-- LXGW 文楷（开源免费）：真楷体，按 unicode-range 分包只下用到的；断网时自动退回系统字体 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="主导航">
+      <a class="nav__logo" href="#top">Yours<span class="nav__logo-dot">.</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <!-- 导航项 -->
+        <li><a class="nav__link" href="#work">作品</a></li>
+        <li><a class="nav__link" href="#about">关于</a></li>
+        <li><a class="nav__link" href="#contact">联系</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- 英雄区 -->
+    <section class="hero container">
+      <p class="hero__eyebrow reveal">你好，我是</p>
+      <h1 class="hero__name reveal">十页</h1>
+      <p class="hero__role reveal">写五言 · 随风吹</p>
+      <p class="hero__tagline reveal">
+        心里来了什么，随手记下来。不写长，几句，留<span class="accent">白</span>。
+      </p>
+      <div class="hero__cta reveal">
+        <a class="btn btn--primary" href="#work">看我的作品</a>
+        <a class="btn btn--ghost" href="#contact">联系我</a>
+      </div>
+    </section>
+
+    <!-- 作品：我的诗 -->
+    <section class="section container" id="work">
+      <h2 class="section__title reveal">作品</h2>
+      <!-- 诗题目录：点题名跳转 -->
+      <nav class="poems__index reveal" aria-label="诗题目录">
+        <a href="#窗外">窗外</a>
+        <a href="#窗外-二">窗外 · 二</a>
+        <a href="#寒窗">寒窗</a>
+        <a href="#云煎">云煎</a>
+        <a href="#夜行客">夜行客</a>
+        <a href="#游雨">游雨</a>
+        <a href="#秋怀">秋怀</a>
+        <a href="#偶得">偶得</a>
+        <a href="#云-其一">云 · 其一</a>
+        <a href="#云-其二">云 · 其二</a>
+        <a href="#中秋月夜">中秋月夜</a>
+      </nav>
+      <div class="poems__list">
+        <article id="窗外" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#窗外">窗外</a></h3>
+          <p class="poem-entry__body">
+            窗外枝头鸟，啾啾去复还。<br />
+            何事苦盘旋？风过皆空散。
+          </p>
+          <p class="poem-entry__meta">五言 · 新吟</p>
+        </article>
+        <article id="窗外-二" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#窗外-二">窗外 · 二</a></h3>
+          <p class="poem-entry__body">
+            窗外飞鸟枝上喧，<br />
+            鸣声啾啾去复还。<br />
+            何事相争尽盘旋？<br />
+            片刻风过皆空散。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="寒窗" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#寒窗">寒窗</a></h3>
+          <p class="poem-entry__body">
+            斜望苍茫屋色寒，<br />
+            宿舍戚戚入夜边。<br />
+            忽觉屋中空人影，<br />
+            唯听秋风叩窗寒。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="云煎" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#云煎">云煎</a></h3>
+          <p class="poem-entry__body">
+            落暮夕阳橘红染，<br />
+            空中残云斜影煎。<br />
+            楼隙此景一瞥间，<br />
+            身在高楼不觉寒。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="夜行客" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#夜行客">夜行客</a></h3>
+          <p class="poem-entry__body">
+            夜色深深人影逝，<br />
+            静室窗明望西迹。<br />
+            孤灯难照旧色时，<br />
+            雨落空空何处泣？
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="游雨" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#游雨">游雨</a></h3>
+          <p class="poem-entry__body">
+            徐徐秋风迎面来，<br />
+            丝丝细雨始才觉。<br />
+            深色积水草色闻，<br />
+            落叶浸雨青衫湿。<br />
+            大珠络绎行其间，<br />
+            身旁路人皆匆匆。<br />
+            思转明晨稀云薄，<br />
+            东西日月共生辉。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="秋怀" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#秋怀">秋怀</a></h3>
+          <p class="poem-entry__body">
+            金辉穿过白云间，<br />
+            红霞托起黄绣现。<br />
+            钟鸣回转随风落，<br />
+            初生阳明秋水寒。<br />
+            问君能有几分愁，<br />
+            满院梧桐相映秋。<br />
+            寂寞梧桐深院冷。<br />
+            待到秋来霜满天，<br />
+            霜华接天碧连天。<br />
+            绣菊独立香满城。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="偶得" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#偶得">偶得</a></h3>
+          <p class="poem-entry__body">
+            月明星稀迹无踪，<br />
+            微风拂夜去无声。<br />
+            楼外窗明斑驳影，<br />
+            幽幽远意润我心。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="云-其一" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#云-其一">云 · 其一</a></h3>
+          <p class="poem-entry__body">
+            空街铺锦云满天，<br />
+            霞光正从棉边来。<br />
+            光阴似水不复返，<br />
+            一晃排开蓝色流。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="云-其二" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#云-其二">云 · 其二</a></h3>
+          <p class="poem-entry__body">
+            云纹千里西面开，<br />
+            东团西絮多新丽。<br />
+            天色犹新空自落，<br />
+            此景不复在人间。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <article id="中秋月夜" class="poem-entry reveal">
+          <h3 class="poem-entry__title"><a href="#中秋月夜">中秋月夜</a></h3>
+          <p class="poem-entry__body">
+            中秋夜雨久未逢，<br />
+            望断归舟客未还，<br />
+            谁言此生无憾事？<br />
+            目送飞鸿独倚栏。<br />
+            疏雨无声凝冷露，<br />
+            落叶覆阶夜正寒，<br />
+            孤影徘徊云掩月，<br />
+            从今露重梦生寒。
+          </p>
+          <p class="poem-entry__meta">七言 · 新吟</p>
+        </article>
+        <!-- 再加一首：复制上面整个 <article class="poem-entry">…</article> 块，改成你的新诗 -->
+      </div>
+    </section>
+
+    <!-- 关于 -->
+    <section class="section container" id="about">
+      <h2 class="section__title reveal">关于</h2>
+      <div class="about reveal">
+        <p>不写长简介。字少，看上面的诗。</p>
+      </div>
+    </section>
+
+    <!-- 联系 -->
+    <section class="section container" id="contact">
+      <h2 class="section__title reveal">联系</h2>
+      <div class="contact reveal">
+        <p>有合作想法或只是想打个招呼？随时来聊。</p>
+        <!-- 替换：你的邮箱 -->
+        <a class="contact__email" href="mailto:you@example.com">you@example.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 十页</p>
+      <a class="site-footer__top" href="#top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
