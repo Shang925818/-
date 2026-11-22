@@ -186,8 +186,9 @@ a { color: inherit; }
 .poems__index {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem 1.5rem;
-  margin-bottom: 2.6rem;
+  margin-bottom: 3rem;
 }
 .poems__index a {
   color: var(--text-dim);
@@ -209,9 +210,18 @@ a { color: inherit; }
   padding-top: 0.4rem;
 }
 .poem-entry {
-  border-left: 1px solid var(--line);
-  padding: 0.2rem 0 0.2rem clamp(1rem, 4vw, 1.8rem);
+  padding: 0.2rem 0 clamp(1.4rem, 3vw, 2rem);
+  text-align: center;
   scroll-margin-top: 72px;   /* 点标题跳转时不被吸顶导航挡住 */
+}
+/* 诗与诗之间一条居中细线，替代原来的左侧竖线 */
+.poem-entry + .poem-entry::before {
+  content: "";
+  display: block;
+  width: 2.2rem;
+  height: 1px;
+  background: var(--line);
+  margin: 0 auto 2.6rem;
 }
 .poem-entry__title {
   font-size: 1.05rem;
@@ -231,7 +241,7 @@ a { color: inherit; }
   width: 7px;
   height: 7px;
   background: var(--accent);
-  margin-right: 0.9rem;   /* 一枚朱砂小点，代替序号 */
+  margin-right: 0.7rem;   /* 一枚朱砂小点，代替序号 */
 }
 .poem-entry__body {
   font-family: 'LXGW WenKai', "Kaiti SC", "STKaiti", "KaiTi", "Noto Serif SC", "Source Han Serif SC", serif;
@@ -240,10 +250,13 @@ a { color: inherit; }
   letter-spacing: 0.08em;
   margin: 0;
 }
-.poem-entry__body .line {
-  display: block;
-  padding-left: 1.2em;        /* 一行太长折行时，续行缩进一格，仍读成一句 */
-  text-indent: -1.2em;
+.poem-entry__body .line { display: block; }
+
+.poem-entry--short .poem-entry__body {
+  font-size: clamp(1.35rem, 5.6vw, 1.9rem);
+  letter-spacing: 0.34em;
+  line-height: 2.4;
+  text-indent: 0.34em;   /* 抵消末字右侧多出的字距，视觉才真正居中 */
 }
 
 .poem-entry__meta {
