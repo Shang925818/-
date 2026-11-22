@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" data-theme="light" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 有脚本才隐藏待入场元素；脚本挂了页面照常显示 -->
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
   <meta name="description" content="日常诗集。" />
   <title>十页 · 日常诗集</title>
-  <!-- LXGW 文楷（开源免费）：真楷体，按 unicode-range 分包只下用到的；断网时自动退回系统字体 -->
-  <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.css" />
+  <!-- LXGW 文楷（SIL OFL 1.1）：自托管，只保留本页用到的字，约 93 KB -->
+  <link rel="stylesheet" href="fonts.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -64,122 +66,122 @@
         <article id="窗外" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#窗外">窗外</a></h3>
           <p class="poem-entry__body">
-            窗外枝头鸟，啾啾去复还。<br />
-            何事苦盘旋？风过皆空散。
+            <span class="line">窗外枝头鸟，啾啾去复还。</span>
+            <span class="line">何事苦盘旋？风过皆空散。</span>
           </p>
           <p class="poem-entry__meta">五言 · 新吟</p>
         </article>
         <article id="窗外-二" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#窗外-二">窗外 · 二</a></h3>
           <p class="poem-entry__body">
-            窗外飞鸟枝上喧，<br />
-            鸣声啾啾去复还。<br />
-            何事相争尽盘旋？<br />
-            片刻风过皆空散。
+            <span class="line">窗外飞鸟枝上喧，</span>
+            <span class="line">鸣声啾啾去复还。</span>
+            <span class="line">何事相争尽盘旋？</span>
+            <span class="line">片刻风过皆空散。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="寒窗" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#寒窗">寒窗</a></h3>
           <p class="poem-entry__body">
-            斜望苍茫屋色寒，<br />
-            宿舍戚戚入夜边。<br />
-            忽觉屋中空人影，<br />
-            唯听秋风叩窗寒。
+            <span class="line">斜望苍茫屋色寒，</span>
+            <span class="line">宿舍戚戚入夜边。</span>
+            <span class="line">忽觉屋中空人影，</span>
+            <span class="line">唯听秋风叩窗寒。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="云煎" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#云煎">云煎</a></h3>
           <p class="poem-entry__body">
-            落暮夕阳橘红染，<br />
-            空中残云斜影煎。<br />
-            楼隙此景一瞥间，<br />
-            身在高楼不觉寒。
+            <span class="line">落暮夕阳橘红染，</span>
+            <span class="line">空中残云斜影煎。</span>
+            <span class="line">楼隙此景一瞥间，</span>
+            <span class="line">身在高楼不觉寒。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="夜行客" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#夜行客">夜行客</a></h3>
           <p class="poem-entry__body">
-            夜色深深人影逝，<br />
-            静室窗明望西迹。<br />
-            孤灯难照旧色时，<br />
-            雨落空空何处泣？
+            <span class="line">夜色深深人影逝，</span>
+            <span class="line">静室窗明望西迹。</span>
+            <span class="line">孤灯难照旧色时，</span>
+            <span class="line">雨落空空何处泣？</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="游雨" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#游雨">游雨</a></h3>
           <p class="poem-entry__body">
-            徐徐秋风迎面来，<br />
-            丝丝细雨始才觉。<br />
-            深色积水草色闻，<br />
-            落叶浸雨青衫湿。<br />
-            大珠络绎行其间，<br />
-            身旁路人皆匆匆。<br />
-            思转明晨稀云薄，<br />
-            东西日月共生辉。
+            <span class="line">徐徐秋风迎面来，</span>
+            <span class="line">丝丝细雨始才觉。</span>
+            <span class="line">深色积水草色闻，</span>
+            <span class="line">落叶浸雨青衫湿。</span>
+            <span class="line">大珠络绎行其间，</span>
+            <span class="line">身旁路人皆匆匆。</span>
+            <span class="line">思转明晨稀云薄，</span>
+            <span class="line">东西日月共生辉。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="秋怀" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#秋怀">秋怀</a></h3>
           <p class="poem-entry__body">
-            金辉穿过白云间，<br />
-            红霞托起黄绣现。<br />
-            钟鸣回转随风落，<br />
-            初生阳明秋水寒。<br />
-            问君能有几分愁，<br />
-            满院梧桐相映秋。<br />
-            寂寞梧桐深院冷。<br />
-            待到秋来霜满天，<br />
-            霜华接天碧连天。<br />
-            绣菊独立香满城。
+            <span class="line">金辉穿过白云间，</span>
+            <span class="line">红霞托起黄绣现。</span>
+            <span class="line">钟鸣回转随风落，</span>
+            <span class="line">初生阳明秋水寒。</span>
+            <span class="line">问君能有几分愁，</span>
+            <span class="line">满院梧桐相映秋。</span>
+            <span class="line">寂寞梧桐深院冷。</span>
+            <span class="line">待到秋来霜满天，</span>
+            <span class="line">霜华接天碧连天。</span>
+            <span class="line">绣菊独立香满城。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="偶得" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#偶得">偶得</a></h3>
           <p class="poem-entry__body">
-            月明星稀迹无踪，<br />
-            微风拂夜去无声。<br />
-            楼外窗明斑驳影，<br />
-            幽幽远意润我心。
+            <span class="line">月明星稀迹无踪，</span>
+            <span class="line">微风拂夜去无声。</span>
+            <span class="line">楼外窗明斑驳影，</span>
+            <span class="line">幽幽远意润我心。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="云-其一" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#云-其一">云 · 其一</a></h3>
           <p class="poem-entry__body">
-            空街铺锦云满天，<br />
-            霞光正从棉边来。<br />
-            光阴似水不复返，<br />
-            一晃排开蓝色流。
+            <span class="line">空街铺锦云满天，</span>
+            <span class="line">霞光正从棉边来。</span>
+            <span class="line">光阴似水不复返，</span>
+            <span class="line">一晃排开蓝色流。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="云-其二" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#云-其二">云 · 其二</a></h3>
           <p class="poem-entry__body">
-            云纹千里西面开，<br />
-            东团西絮多新丽。<br />
-            天色犹新空自落，<br />
-            此景不复在人间。
+            <span class="line">云纹千里西面开，</span>
+            <span class="line">东团西絮多新丽。</span>
+            <span class="line">天色犹新空自落，</span>
+            <span class="line">此景不复在人间。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>
         <article id="中秋月夜" class="poem-entry reveal">
           <h3 class="poem-entry__title"><a href="#中秋月夜">中秋月夜</a></h3>
           <p class="poem-entry__body">
-            中秋夜雨久未逢，<br />
-            望断归舟客未还，<br />
-            谁言此生无憾事？<br />
-            目送飞鸿独倚栏。<br />
-            疏雨无声凝冷露，<br />
-            落叶覆阶夜正寒，<br />
-            孤影徘徊云掩月，<br />
-            从今露重梦生寒。
+            <span class="line">中秋夜雨久未逢，</span>
+            <span class="line">望断归舟客未还，</span>
+            <span class="line">谁言此生无憾事？</span>
+            <span class="line">目送飞鸿独倚栏。</span>
+            <span class="line">疏雨无声凝冷露，</span>
+            <span class="line">落叶覆阶夜正寒，</span>
+            <span class="line">孤影徘徊云掩月，</span>
+            <span class="line">从今露重梦生寒。</span>
           </p>
           <p class="poem-entry__meta">七言 · 新吟</p>
         </article>

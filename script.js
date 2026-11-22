@@ -13,18 +13,41 @@
   var menu = document.getElementById("navMenu");
 
   if (toggle && menu) {
+    var mq = window.matchMedia("(max-width: 720px)");
+
+    // 只有窄屏收起时才真正禁用（inert）；宽屏下这个菜单就是普通导航
+    function apply(open) {
+      var mobile = mq.matches;
+      var expanded = mobile && open;
+      menu.classList.toggle("open", expanded);
+      menu.inert = mobile && !expanded;
+      toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+      toggle.setAttribute("aria-label", expanded ? "关闭菜单" : "打开菜单");
+    }
+
+    apply(false);
+
     toggle.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "关闭菜单" : "打开菜单");
+      apply(!menu.classList.contains("open"));
     });
-    // 点导航项后自动收起
-    menu.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        menu.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
+
+    // Esc 收起并把焦点还给按钮
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) {
+        apply(false);
+        toggle.focus();
       }
     });
+
+    // 点导航项后自动收起
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest("a")) apply(false);
+    });
+
+    // 视口跨过断点时复位，避免宽屏残留 inert
+    var onMQ = function () { apply(false); };
+    if (mq.addEventListener) mq.addEventListener("change", onMQ);
+    else if (mq.addListener) mq.addListener(onMQ);
   }
 
   /* ---------- 滚动入场（.reveal → .in） ---------- */

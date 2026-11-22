@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <!-- 站点部署在根域名就用 /；若在子路径（如 GitHub Pages 的 /repo/），改成那个路径 -->
+  <base href="/" />
+  <title>找不到这一页 · 十页</title>
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .lost {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 4rem 0;
+    }
+    .lost__code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.4em;
+      color: var(--text-dim);
+      margin: 0;
+    }
+    .lost__title {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      margin: 0;
+    }
+    .lost__text { color: var(--text-dim); margin: 0 0 1.6rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="主导航">
+      <a class="nav__logo" href="./">Yours<span class="nav__logo-dot">.</span></a>
+      <ul class="nav__menu">
+        <li><a class="nav__link" href="#work">作品</a></li>
+        <li><a class="nav__link" href="#about">关于</a></li>
+        <li><a class="nav__link" href="#contact">联系</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="lost">
+      <p class="lost__code">404</p>
+      <h1 class="lost__title">这一页没写</h1>
+      <p class="lost__text">地址大约是抄错了。诗都还在原来的地方。</p>
+      <a class="btn btn--primary" href="./">回首页</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 十页</p>
+      <a class="site-footer__top" href="./">回到首页 ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
