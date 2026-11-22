@@ -72,6 +72,7 @@
   var workSection = document.getElementById("work");
 
   if (backToWork && workSection) {
+    backToWork.hidden = false;   // 样式已生效，可以露面了
     var ticking = false;
     function updateFloat() {
       var y = window.scrollY || window.pageYOffset;
