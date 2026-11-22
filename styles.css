@@ -206,7 +206,7 @@ a { color: inherit; }
 /* ---------- 日常诗集：全页重心 ---------- */
 .poems__list {
   display: grid;
-  gap: 3.4rem;
+  gap: 2.6rem;
   padding-top: 0.4rem;
 }
 .poem-entry {
@@ -221,7 +221,7 @@ a { color: inherit; }
   width: 2.2rem;
   height: 1px;
   background: var(--line);
-  margin: 0 auto 2.6rem;
+  margin: 0 auto 1.9rem;
 }
 .poem-entry__title {
   font-size: 1.05rem;
@@ -253,10 +253,10 @@ a { color: inherit; }
 .poem-entry__body .line { display: block; }
 
 .poem-entry--short .poem-entry__body {
-  font-size: clamp(1.35rem, 5.6vw, 1.9rem);
-  letter-spacing: 0.34em;
+  font-size: clamp(1.1rem, 4.7vw, 1.45rem);
+  letter-spacing: 0.1em;
   line-height: 2.4;
-  text-indent: 0.34em;   /* 抵消末字右侧多出的字距，视觉才真正居中 */
+  text-indent: 0.1em;   /* 抵消末字右侧多出的字距，视觉才真正居中 */
 }
 
 .poem-entry__meta {
@@ -352,7 +352,7 @@ a { color: inherit; }
 
   /* 手机上再挤一点，让 16 字左右的一行尽量不断 */
   .poem-entry__body { letter-spacing: 0.05em; line-height: 2.15; }
-  .poems__list { gap: 2.9rem; }
+  .poems__list { gap: 2.2rem; }
 
   .nav__menu {
     position: absolute;
