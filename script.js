@@ -67,6 +67,27 @@
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
+  /* ---------- 悬浮回到目录 ---------- */
+  var backToWork = document.getElementById("backToWork");
+  var workSection = document.getElementById("work");
+
+  if (backToWork && workSection) {
+    var ticking = false;
+    function updateFloat() {
+      var y = window.scrollY || window.pageYOffset;
+      var start = workSection.offsetTop - 200;
+      backToWork.classList.toggle("is-on", y > start);
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateFloat);
+      }
+    }, { passive: true });
+    updateFloat();
+  }
+
   /* 说明：素净水墨定调后去掉了深浅切换按钮；夜墨变量仍留在 CSS 里，
      以后想开回来，把 <html> 的 data-theme 改成 "dark" 即可。 */
 })();
