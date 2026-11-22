@@ -8,7 +8,7 @@
   --font-sans: 'LXGW WenKai', "Kaiti SC", "STKaiti", "KaiTi", "BiauKai", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
   --font-mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
 
-  --maxw: 880px;          /* 窄版心，留白更多 */
+  --maxw: 42rem;          /* 版心与诗同宽，左右对称留白 */
   --gap: clamp(3.5rem, 8vw, 6rem);
   --pad: clamp(1.1rem, 4.5vw, 3rem);   /* 手机上别把正文挤窄 */
 
@@ -206,7 +206,6 @@ a { color: inherit; }
 .poems__list {
   display: grid;
   gap: 3.4rem;
-  max-width: 40rem;
   padding-top: 0.4rem;
 }
 .poem-entry {
