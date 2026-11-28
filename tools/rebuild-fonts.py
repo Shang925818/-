@@ -18,6 +18,7 @@
 import os
 import re
 import sys
+import time
 import urllib.request
 
 CDN = "https://cdn.staticfile.org/lxgw-wenkai-webfont/1.7.0/"
@@ -41,6 +42,19 @@ def visible_text():
     return chars | set(EXTRA)
 
 
+def fetch(url, timeout=30, tries=4):
+    """网络不稳时重试几次，别因为一次握手超时就把字体留在半旧状态。"""
+    last = None
+    for i in range(tries):
+        try:
+            return urllib.request.urlopen(url, timeout=timeout).read()
+        except Exception as error:  # noqa: BLE001 - 统一重试
+            last = error
+            print(f"  下载失败（第 {i+1}/{tries} 次）：{url.split('/')[-1]} — {error}")
+            time.sleep(2 * (i + 1))
+    raise last
+
+
 def parse_ranges(ur):
     out = []
     for tok in ur.split(","):
@@ -60,7 +74,7 @@ def main():
         sys.exit("缺 fonttools：pip install fonttools brotli")
 
     print("读取字体 CSS …")
-    css = urllib.request.urlopen(CSS_URL, timeout=30).read().decode("utf-8")
+    css = fetch(CSS_URL).decode("utf-8")
     blocks = re.findall(r"@font-face\s*\{(.*?)\}", css, re.S)
     chars = visible_text()
     print(f"站点可见字符：{len(chars)}")
@@ -85,7 +99,7 @@ def main():
         # 本地那份可能已经被裁过一次；缺字就重新下载完整分片
         font = TTFont(path) if os.path.exists(path) else None
         if font is None or any(ord(c) not in font.getBestCmap() for c in used):
-            data = urllib.request.urlopen(CDN + m.group(1).lstrip("./"), timeout=30).read()
+            data = fetch(CDN + m.group(1).lstrip("./"))
             open(path, "wb").write(data)
             font = TTFont(path)
         total_before += os.path.getsize(path)
